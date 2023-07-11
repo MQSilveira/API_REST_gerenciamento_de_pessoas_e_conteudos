@@ -1,6 +1,5 @@
-# Desafio Vaga Backend
-Este repositório contém a solução do desafio para uma vaga de Backend na qual eu participei. 
-O objetivo do desafio é criar uma API REST utilizando o Django Rest Framework e popular um banco de dados com informações de pessoas e conteúdos.
+# Gerenciamento de Pessoas e Conteúdos
+Este repositório contém uma API REST desenvolvida com Django e Django Rest Framework, que permite o gerenciamento de pessoas e conteúdos. A aplicação permite a criação, atualização, leitura e exclusão de registros de pessoas e conteúdos, além de manter o controle das pessoas que leram cada conteúdo. A API foi construída com o objetivo de fornecer uma solução flexível e escalável para o gerenciamento de dados relacionados a pessoas e conteúdos.
 <br><br>
 
 ## Tecnologias utilizadas
@@ -18,7 +17,7 @@ Para executar a aplicação, você precisa ter o Docker e o Docker Compose insta
 
 Clone este repositório em sua máquina:
 ```bash
-$ git clone https://github.com/MQSilveira/desafio.git
+$ git clone https://github.com/MQSilveira/API_REST_gerenciamento_de_pessoas_e_conteudos.git
 $ cd desafio
 $ docker-compose up -d
 ```
@@ -97,7 +96,7 @@ A API possui os seguintes endpoints:
 ## Licença
 Este programa é licenciado sob a licença MIT. Veja o arquivo [LICENSE.md](https://github.com/MQSilveira/desafio/blob/main/LICENSE) para detalhes.
 ___
-Para acessar o README contendo a descrição original do desafio, está nesse [link](https://github.com/MQSilveira/desafio/blob/main/desafio.md).
+Para obter mais detalhes sobre a proposta do projeto e requisitos específicos, consulte o documento de especificação localizado [aqui](https://github.com/MQSilveira/API_REST_gerenciamento_de_pessoas_e_conteudos/blob/main/desafio.md).
 ___
 <br>
 
