@@ -1,8 +1,8 @@
-# Gerenciamento de Pessoas e Conteúdos
-Este repositório contém uma API REST desenvolvida com Django e Django Rest Framework, que permite o gerenciamento de pessoas e conteúdos. A aplicação permite a criação, atualização, leitura e exclusão de registros de pessoas e conteúdos, além de manter o controle das pessoas que leram cada conteúdo. A API foi construída com o objetivo de fornecer uma solução flexível e escalável para o gerenciamento de dados relacionados a pessoas e conteúdos.
+# People and Content Management
+This repository contains a REST API developed with Django and Django Rest Framework, which allows the management of people and content. The application allows the creation, updating, reading, and deletion of people and content records, as well as keeping track of the people who have read each content. The API was built with the aim of providing a flexible and scalable solution for managing data related to people and content.
 <br><br>
 
-## Tecnologias utilizadas
+## Technologies used
 * Django
 * Django Rest Framework
 * PostgreSQL
@@ -11,29 +11,29 @@ Este repositório contém uma API REST desenvolvida com Django e Django Rest Fra
 * Pytest
 <br><br>
 
-## Como executar a aplicação
-Para executar a aplicação, você precisa ter o Docker e o Docker Compose instalados em sua máquina.
-<br>Em seguida, siga os passos abaixo:
+## How to Run the Application
+To run the application, you need to have Docker and Docker Compose installed on your machine.
+<br>Next, follow the steps below:
 
-Clone este repositório em sua máquina:
+Clone this repository on your machine:
 ```bash
-$ git clone https://github.com/MQSilveira/API_REST_gerenciamento_de_pessoas_e_conteudos.git
-$ cd desafio
+$ git clone https://github.com/MQSilveira/People_and_Content_Management_REST_API.git
+$ cd People_and_Content_Management_REST_API
 $ docker-compose up -d
 ```
-Após os serviços definidos em docker-compose serem iniciados, faça a migração do banco de dados utilizando o comando:
-```bash
-$ docker-compose exec web python manage.py migrate
-```
-Para acessar a API, envie solicitações HTTP para o endereço http://localhost:8000
-<br><br>
 
-## Endpoints da API
-A API possui os seguintes endpoints:
+To access the API, send HTTP requests to the address http://localhost:8000
+<br>
+![API](https://github.com/MQSilveira/People_and_Content_Management_REST_API/blob/main/files/api.png)
+
+
+
+## API Endpoints
+The API has the following endpoints:
 
 - `/people/`
-<p>POST: Cria uma nova pessoa.</p>
-<p>GET: Lista todas as pessoas cadastradas, com seus respectivos conteúdos criados conforme o exemplo de json abaixo:</p>
+<p>POST: Create a new person.</p>
+<p>GET: Lists all registered persons, along with their respective created contents, as shown in the example JSON below:</p>
 
 ```bash
 [
@@ -49,17 +49,19 @@ A API possui os seguintes endpoints:
   }
 ]
 ```
-<br><br>
+<br>
+
+![PEOPLE](https://github.com/MQSilveira/People_and_Content_Management_REST_API/blob/main/files/people.png)
 
 - `/people/<int:person_id>/`
-<p>GET: Retorna os dados de uma pessoa, com seus respectivos conteúdos criados.</p>
-<p>PUT: Atualiza apenaso nome de uma pessoa.</p>
-<p>DELETE: Remove o registro de uma única pessoa. Caso a pessoa tenha algum conteúdo criado, todos esses conteúdos também deverão ser removidos.</p>
+<p>GET: Returns the data of a person, with their respective created contents.</p>
+<p>PUT: Updates only the name of a person.</p>
+<p>DELETE: Removes the record of a single person. If the person has any content created, all such content should also be removed.</p>
 <br><br>
 
 - `/content/`
-<p>POST: Cria um novo conteúdo.</p>
-<p>GET: Lista todos os conteúdos cadastrados. Este endpoint deve retornar todos as pessoas que leram o conteúdo, conforme o exemplo de json abaixo:
+<p>POST: Create new content.</p>
+<p>GET: Lists all the registered contents. This endpoint should return all the people who have read the content, as shown in the example JSON below:
 
 ```json
   {
@@ -77,37 +79,32 @@ A API possui os seguintes endpoints:
     ]
   }
   ```
-<br><br>
+<br>
+
+![CONTENT](https://github.com/MQSilveira/People_and_Content_Management_REST_API/blob/main/files/content.png)
 
 - `/content/<int:content_id>/`
 
-<p>GET: Retorna os dados de um único  conteúdo. Este endpoint também retorna todos as pessoas que leram o mesmo, conforme mostrado no json anteriormente.</p>
-<p>PUT: Atualiza o texto e o criador de um único conteúdo.</p>
-<p>DELETE: Remove o registro de um conteúdo.</p>
+<p>GET: Returns the data of a single content. This endpoint also returns all the people who have read the content, as shown in the JSON above.</p>
+<p>PUT: Updates the text and creator of a single content.</p>
+<p>DELETE: Removes the record of a content.</p>
 <br><br>
 
 - `/content/<int:content_pk>/<int:person_pk>/mark-as-read/`
 
-<p>POST: Adiciona uma pessoa que leu um conteúdo (apenas marca como lido por uma determinada pessoa).</p>
+<p>POST: Adds a person who has read a piece of content (only marks it as read by a particular person).</p>
 
-* Os endpoints que fazem listagem de dados estão paginados, com a quantidade de 50 elementos por página.
+* The endpoints that list data are paginated, with the amount of 50 elements per page.
 <br><br>
 
-## Licença
-Este programa é licenciado sob a licença MIT. Veja o arquivo [LICENSE.md](https://github.com/MQSilveira/desafio/blob/main/LICENSE) para detalhes.
+## License
+This program is licensed under the MIT License. See the [LICENSE.md](https://github.com/MQSilveira/desafio/blob/main/LICENSE) file for details.
 ___
-Para obter mais detalhes sobre a proposta do projeto e requisitos específicos, consulte o documento de especificação localizado [aqui](https://github.com/MQSilveira/API_REST_gerenciamento_de_pessoas_e_conteudos/blob/main/desafio.md).
+To obtain more details about the project proposal and specific requirements, please refer to the specification document located [here](https://github.com/MQSilveira/People_and_Content_Management_REST_API/blob/main/files/desafio.md).
 ___
 <br>
 
-## Próximos Passos (melhorias futuras)
-- Implementar programação assíncrona para minimizar o impacto no banco de dados.
-- Melhorar os testes automatizados.
-- Workflows para CI utilizando o [github actions](https://github.com/features/actions).
-- Deploy em alguma cloud.
-<br><br>
-
-## Você pode me encontrar em outras plataformas:
+## You can find me on other platforms:
 - [LinkedIn](https://www.linkedin.com/in/dev-marcos-silveira/)
 - [Website](https://mqsilveira.github.io/Portfolio/)
 - marcosilveira.lg@gmail.com
