@@ -27,6 +27,13 @@ To access the API, send HTTP requests to the address http://localhost:8000
 ![API](https://github.com/MQSilveira/People_and_Content_Management_REST_API/blob/main/files/api.png)
 
 
+## Populating the Database
+To populate the database with the contents of the Excel file contained in this repository, simply run the following command:
+```bash
+docker exec -it django /bin/bash -c "python manage.py populate_data"
+```
+This command will create 1000 instances of People and 1000 instances of Content, where each content will have a creator and all people will be added to the "read_by" field.
+
 
 ## API Endpoints
 The API has the following endpoints:
