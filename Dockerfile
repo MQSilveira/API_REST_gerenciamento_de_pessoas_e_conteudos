@@ -1,4 +1,7 @@
-FROM python:3-slim-buster
+FROM python:3.10.6
+
+ENV PYTHONDONWRITEBYTECODE 1 
+ENV PYTHONUNBUFFERED 1 
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc && \

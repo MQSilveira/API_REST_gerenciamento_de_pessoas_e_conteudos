@@ -1,5 +1,4 @@
 from pathlib import Path
-#from decouple import config
 import os
 
 
@@ -44,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'desafio.urls'
+ROOT_URLCONF = 'management_people_content.urls'
 
 TEMPLATES = [
     {
@@ -62,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'desafio.wsgi.application'
+WSGI_APPLICATION = 'management_people_content.wsgi.application'
 
 
 # Database
@@ -70,12 +69,12 @@ WSGI_APPLICATION = 'desafio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'USER': 'postgres',    
+        'PASSWORD': 'postgres', 
+        'HOST': 'db_postgres',                     
+        'PORT': '5432',
     }
 }
 
